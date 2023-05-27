@@ -23,9 +23,26 @@ class TrianguloTartaglia:
         for fila in self.triangulo:
             print(fila)
 
+    def obtener_diagonal(self, num_diagonal):
+        diagonal = []
+        fila_actual = num_diagonal
+        columna_actual = 0
+
+        while fila_actual >= 0:
+            elemento = self.triangulo[fila_actual][columna_actual]
+            diagonal.append(elemento)
+            fila_actual -= 1
+            columna_actual += 1
+
+        return diagonal
+
+
 # Ejemplo de uso
 n = 50
 
-
 triangulo = TrianguloTartaglia(n)
 triangulo.imprimir_triangulo()
+
+num_diagonal = 2
+diagonal = triangulo.obtener_diagonal(num_diagonal)
+print(diagonal)  # Imprime la diagonal solicitada
